@@ -12,20 +12,18 @@ knitr::opts_chunk$set(
 
 > CRAN Package Dependencies
 
-[![Linux Build Status](https://travis-ci.org//crandeps.svg?branch=master)](https://travis-ci.org//crandeps)
-
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/github//crandeps?svg=true)](https://ci.appveyor.com/project//crandeps)
+[![Linux Build Status](https://travis-ci.org/r-pkgs/crandeps.svg?branch=master)](https://travis-ci.org/r-pkgs/crandeps)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/r-pkgs/crandeps?svg=true)](https://ci.appveyor.com/project/gaborcsardi/crandeps)
 [![](http://www.r-pkg.org/badges/version/crandeps)](http://www.r-pkg.org/pkg/crandeps)
 [![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/crandeps)](http://www.r-pkg.org/pkg/crandeps)
 
-
-Query CRAN (and other CRAN-like) package dependencies, nice and easy,
-  calculate recursive dependencies, or the whole dependency DAG.
+Query CRAN package dependencies, calculate recursive dependencies, or
+the whole dependency DAG.
 
 ## Installation
 
 ```{r eval = FALSE}
-devtools::install_github("/crandeps")
+source("https://install-github.me/r-hub/crandeps")
 ```
 
 ## Usage
@@ -36,4 +34,4 @@ library(crandeps)
 
 ## License
 
-MIT + file LICENSE © 
+MIT © R Consortium
