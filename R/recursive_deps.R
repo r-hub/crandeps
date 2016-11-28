@@ -1,7 +1,7 @@
 
 pkg_recursive_deps <- function(package, soft = TRUE) {
   assert_that(is_string(package))
-  assert_that(is_flag(hard))
+  assert_that(is_flag(soft))
 
   url <- paste0(rec_deps_url, "/", if (soft) "all/", package)
   resp <- GET(url)
