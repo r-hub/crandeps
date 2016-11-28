@@ -1,4 +1,5 @@
 
+#' @export
 #' @importFrom httr GET stop_for_status content
 #' @importFrom jsonlite toJSON fromJSON
 

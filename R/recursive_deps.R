@@ -1,4 +1,6 @@
 
+#' @export
+
 pkg_recursive_deps <- function(package, soft = TRUE) {
   assert_that(is_string(package))
   assert_that(is_flag(soft))

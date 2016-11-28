@@ -1,4 +1,6 @@
 
+#' @export
+
 cran_deps <- function() {
   resp <- GET(deps_url)
   stop_for_status(resp)
@@ -39,6 +41,7 @@ cran_deps <- function() {
 
 hard_dep_types <- c("Depends", "Imports", "LinkingTo")
 
+#' @export
 #' @importFrom simplegraph graph topological_sort
 
 cran_topo_sort <- function(deps = NULL) {
