@@ -46,9 +46,10 @@ hard_dep_types <- c("Depends", "Imports", "LinkingTo")
 
 cran_topo_sort <- function(deps = NULL) {
   if (is.null(deps)) {
-    message("Downloading dependency data ... ", appendLF = FALSE)
-    deps <- cran_deps()
-    message("DONE")
+    deps <- with_status(
+      cran_deps(),
+      "Downloading dependency data"
+    )
   }
   all_pkgs <- attr(deps, "packages")
 
@@ -58,18 +59,19 @@ cran_topo_sort <- function(deps = NULL) {
   ## Keep CRAN packages only
   deps <- deps[ deps$pkg %in% all_pkgs & deps$dep %in% all_pkgs, ]
 
-  message("Creating graph ... ", appendLF = FALSE)
-  edges <- deps[, c("dep", "pkg")]
-  verts <- data.frame(
-    stringsAsFactors = FALSE,
-    id = unique(c(all_pkgs, unlist(edges)))
-  )
-  sg <- graph(verts, edges)
-  message("DONE")
+  sg <- with_status({
+    edges <- deps[, c("dep", "pkg")]
+    verts <- data.frame(
+      stringsAsFactors = FALSE,
+      id = unique(c(all_pkgs, unlist(edges)))
+    )
+    graph(verts, edges)
+  }, "Crearing graph")
 
-  message("Topological sorting ... ", appendLF = FALSE)
-  ts <- topological_sort(sg)
-  message("DONE")
+  ts <- with_status(
+    topological_sort(sg),
+    "Topological sorting"
+  )
 
   ts
 }

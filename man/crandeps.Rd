@@ -9,4 +9,3 @@
 Query CRAN package dependencies, calculate recursive dependencies, or
 the whole dependency DAG.
 }
-

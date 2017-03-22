@@ -9,13 +9,18 @@ License: MIT + file LICENSE
 LazyData: true
 URL: https://github.com/r-hub/crandeps
 BugReports: https://github.com/r-hub/crandeps/issues
-RoxygenNote: 5.0.1.9000
+RoxygenNote: 6.0.1
 Roxygen: list(markdown = TRUE)
 Imports:
     assertthat,
+    clisymbols,
+    crayon,
     httr,
     jsonlite,
-    simplegraph
+    simplegraph,
+    statusbar
 Suggests: 
     testthat
+Remotes: 
+    gaborcsardi/statusbar
 Encoding: UTF-8
