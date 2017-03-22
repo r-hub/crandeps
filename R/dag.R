@@ -66,7 +66,7 @@ cran_topo_sort <- function(deps = NULL) {
       id = unique(c(all_pkgs, unlist(edges)))
     )
     graph(verts, edges)
-  }, "Crearing graph")
+  }, "Clearing graph")
 
   ts <- with_status(
     topological_sort(sg),
