@@ -18,6 +18,8 @@ with_status <- function(expr, msg, done = "DONE", width = 35) {
   expr
 }
 
+#' @import backports
+
 dotted_line <- function(msg, width) {
   paste(msg, strrep(".", max(0, width - nchar(msg))))
 }
